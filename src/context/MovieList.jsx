@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserContext from "./UserContext";
+import UserContext from "./userContext";
 import MovieRow from "./MovieRow";
 
 class MovieList extends Component {

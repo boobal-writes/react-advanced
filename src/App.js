@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react";
 import "./App.css";
 import MoviePage from "./context/MoviePage";
-import UserContext from "./context/UserContext";
+import UserContext from "./context/userContext";
 import Movie from "./hoc/Movie";
 import Counter from "./hooks/Counter";
 import Users from "./hooks/Users";

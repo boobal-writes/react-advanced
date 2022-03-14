@@ -5,21 +5,33 @@ import UserContext from "./context/UserContext";
 import Movie from "./hoc/Movie";
 import Counter from "./hooks/Counter";
 import Users from "./hooks/Users";
+import Login from "./context/Login";
 
 class App extends Component {
   state = {
-    user: {
-      name: "Boobalan",
-    },
+    user: null,
   };
+
+  handleLoggedIn = (username) => {
+    console.log("Getting user details");
+    const user = { name: "Boobalan" };
+    this.setState({ user });
+  };
+
   render() {
     return (
       <Fragment>
-        <UserContext.Provider value={this.state.user}>
-          <Movie id={1} />
+        <UserContext.Provider
+          value={{
+            currentUser: this.state.user,
+            onLoggedIn: this.handleLoggedIn,
+          }}
+        >
+          {/* <Movie id={1} />
           <Counter />
-          <Users />
+          <Users /> */}
           <MoviePage />
+          <Login />
         </UserContext.Provider>
       </Fragment>
     );
